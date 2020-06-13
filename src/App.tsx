@@ -5,15 +5,18 @@ import SignIn from './pages/SignIn';
 
 import GlobalStyle from './styles/global';
 
-import AuthContext from './context/AuthContext';
+import AppProvider from './hooks';
 
-const App: React.FC = () => (
-  <>
-    <AuthContext.Provider value={{ name: 'Ttales R G S Silva' }}>
-      <SignIn />
-    </AuthContext.Provider>
-    <GlobalStyle />
-  </>
-);
+const App: React.FC = () => {
+  return (
+    <>
+      <AppProvider>
+        <SignIn />
+      </AppProvider>
+
+      <GlobalStyle />
+    </>
+  );
+};
 
 export default App;
